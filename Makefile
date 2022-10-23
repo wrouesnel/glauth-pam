@@ -19,3 +19,6 @@ plugin_pam_darwin_amd64:
 
 plugin_pam_darwin_arm64:
 	PLUGIN_OS=darwin PLUGIN_ARCH=arm64 make plugin_pam
+
+release-glauth-pam: plugin_pam_linux_amd64
+	mv bin/linuxamd64/pam_linux.so bin/pam_linux-linux-amd64.so && rmdir bin/linuxamd64
